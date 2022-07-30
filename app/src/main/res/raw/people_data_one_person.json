@@ -1,0 +1,23 @@
+{
+  "_id": "60c8a13250c342ffc2d8472a",
+  "name": "Roberson Rosa",
+  "gender": "male",
+  "about": "Qui exercitation est sint nostrud fugiat. Aute quis nulla non nisi id quis nisi. Est consectetur dolore consequat esse dolor dolore dolor amet aliquip magna. Culpa quis in aliquip dolor. Sint sit exercitation sint officia cupidatat eiusmod occaecat labore dolor do commodo magna. Laboris velit mollit eiusmod in minim in duis cupidatat voluptate. Magna et fugiat sit cupidatat laboris nulla esse veniam eiusmod adipisicing commodo consequat magna excepteur.\r\n",
+  "picture": "https://cdn.pixabay.com/photo/2017/06/01/07/31/elephant-2362696__340.png",
+  "birth": {
+    "date": "1956-03-05T09:07:19 -02:00",
+    "location": {
+      "name": "Falkland Islands (Malvinas), Kingstowne",
+      "latitude": -11.900825,
+      "longitude": -47.027844
+    }
+  },
+  "death": {
+    "date": "2013-03-16T07:58:50 -02:00",
+    "location": {
+      "name": "Finland, Snowville",
+      "latitude": -80.198416,
+      "longitude": 125.666659
+    }
+  }
+}
