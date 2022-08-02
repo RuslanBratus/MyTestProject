@@ -13,7 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.mytestproject.ui.fragments.main.viewmodel.models.Person
 
 
-class MyPersonsRecyclerAdapter (private val onClick: (productId : String) -> Unit): RecyclerView.Adapter<MyPersonViewHolder>() {
+class MyPersonsRecyclerAdapter (): RecyclerView.Adapter<MyPersonViewHolder>() {
      var persons : List<Person> = listOf()
     set(value) {
         field = value
@@ -31,52 +31,33 @@ class MyPersonsRecyclerAdapter (private val onClick: (productId : String) -> Uni
 
     override fun onBindViewHolder(holder: MyPersonViewHolder, position: Int) {
         Log.i("test", "onBindViewHolder")
-        placeProducts(holder, position)
+        placePersons(holder, position)
     }
 
 
     override fun getItemCount(): Int = persons.size
 
-    private fun placeProducts(holder: MyPersonViewHolder, position: Int) {
+    private fun placePersons(holder: MyPersonViewHolder, position: Int) {
         Log.i("test", "placeProducts")
 
 
         val person = persons[position]
         holder.name.text = person.name
         holder.id.text = person._id
-        //@TODO
-//        Glide.with(holder.image.context)
-//            .load(person.image)
-//            .diskCacheStrategy(DiskCacheStrategy.ALL)
-//            .into(holder.image)
-//
-
-    }
-
-}
-class SpacesItemDecoration(private val space: Int) : ItemDecoration() {
-    override fun getItemOffsets(
-        outRect: Rect, view: View,
-        parent: RecyclerView, state: RecyclerView.State
-    ) {
-        if (parent.getChildLayoutPosition(view) % 2 == 1 )
-            outRect.left = 0
-        else
-            outRect.left = space
+        holder.birth.text = person.birth.toString()
 
 
-
-
-        outRect.right = space
-        outRect.bottom = space
-
-
-
-        if (parent.getChildLayoutPosition(view) == 0 || parent.getChildLayoutPosition(view) == 1) {
-            outRect.top = space
-        } else {
-            outRect.top = 0
+        if (person.death != null) {
+            holder.death.text = person.death.toString()
         }
-    }
-}
 
+
+        Glide.with(holder.image.context)
+            .load(person.picture)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(holder.image)
+
+
+    }
+
+}
